@@ -17,11 +17,11 @@ import org.xml.sax.SAXException;
 public class CustomXmlParser {
 	public static void main(String[] args) throws ParserConfigurationException, SAXException, IOException, XPathExpressionException {
 		DocumentBuilder parser = DocumentBuilderFactory.newInstance().newDocumentBuilder();
-		InputStream fileStream = CustomXmlParser.class.getClassLoader().getResourceAsStream("config.xml");
-		Document document = parser.parse(fileStream);
+		InputStream configuration = CustomXmlParser.class.getClassLoader().getResourceAsStream("config.xml");
+		Document document = parser.parse(configuration);
 		XPath xpath = XPathFactory.newInstance().newXPath();
-		String expression = "/wgt-config/solr-path";
-		String path = (String) xpath.evaluate(expression, document, XPathConstants.STRING);
-		System.out.println(path);
+		String pathVariableExpression = "/wgt-config/solr-path";
+		String pathVariable = (String) xpath.evaluate(pathVariableExpression, document, XPathConstants.STRING);
+		System.out.println(pathVariable);
 	}
 }

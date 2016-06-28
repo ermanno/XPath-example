@@ -1,0 +1,2 @@
+* Example of Xml parsing with XPath
+This is just a quick reminder to myself of how to find Xml elements in Java using XPath. Other options would have been parsing with SAX or DOM.
